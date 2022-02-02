@@ -28,8 +28,8 @@ const Login = () => {
     try {
       await googleSignIn();
       navigate("/");
-    } catch (error) {
-      console.log(error);
+    } catch (er) {
+      console.log(er);
     }
   };
 
