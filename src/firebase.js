@@ -8,7 +8,6 @@ const firebaseConfig = {
   apiKey: "AIzaSyDjmUgN5UlZhrehqoOJ3m-5TeJV80oOmE4",
   authDomain: "auth-dev-265ea.firebaseapp.com",
   authDomain: "extraspace-cloud.netlify.app",
-  authDomain: "extraspaca-react-cloud.vercel.app",
   projectId: "auth-dev-265ea",
   storageBucket: "auth-dev-265ea.appspot.com",
   messagingSenderId: "22185838490",
