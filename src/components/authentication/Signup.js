@@ -37,7 +37,7 @@ export default function Signup() {
   return (<>
   <NavBarComp/>
     <CenteredContainer >
-      <Card style={{marginTop:"10%"}}>
+      <Card style={{marginTop:"10%", marginBottom:"10%"}}>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
