@@ -9,6 +9,7 @@ const firebaseConfig = {
   authDomain: "auth-dev-265ea.firebaseapp.com",
   authDomain: "extraspace-cloud.netlify.app",
   authDomain: "extraspaca-react-cloud.vercel.app",
+  authDomain: "anjali-drive.netlify.app",
   projectId: "auth-dev-265ea",
   storageBucket: "auth-dev-265ea.appspot.com",
   messagingSenderId: "22185838490",
