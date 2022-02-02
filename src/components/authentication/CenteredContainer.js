@@ -5,7 +5,7 @@ export default function CenteredContainer({ children }) {
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "90vh" }}
+      style={{ minHeight: "fit-content" }}
     >
       {children}
     </Container>

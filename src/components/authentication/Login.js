@@ -4,6 +4,8 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import CenteredContainer from "./CenteredContainer";
+import NavBarComp from "./NavBarComp";
+import Footer from "./Footer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +35,8 @@ const Login = () => {
     }
   };
 
-  return (
+  return (<>
+  <NavBarComp/>
     <CenteredContainer>
       <div className="p-4 box">
         <h2 className="mb-3 text-centre">Login</h2>
@@ -78,6 +81,8 @@ const Login = () => {
       </div>
       
     </CenteredContainer>
+    <Footer/>
+    </>
   );
 };
 
