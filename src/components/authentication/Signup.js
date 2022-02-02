@@ -3,6 +3,8 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
 import CenteredContainer from "./CenteredContainer"
+import NavBarComp from "./NavBarComp"
+import Footer from "./Footer"
 
 export default function Signup() {
   const emailRef = useRef()
@@ -32,9 +34,10 @@ export default function Signup() {
     setLoading(false)
   }
 
-  return (
-    <CenteredContainer>
-      <Card>
+  return (<>
+  <NavBarComp/>
+    <CenteredContainer >
+      <Card style={{marginTop:"25%"}}>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -62,5 +65,7 @@ export default function Signup() {
       </Card>
       
     </CenteredContainer>
+    <Footer/>
+    </>
   )
 }
