@@ -115,6 +115,7 @@ export default function AddFileButton({ currentFolder }) {
           >
             {uploadingFiles.map(file => (
               <Toast
+              className='bg-black'
                 key={file.id}
                 onClose={() => {
                   setUploadingFiles(prevUploadingFiles => {
@@ -131,9 +132,9 @@ export default function AddFileButton({ currentFolder }) {
                   {file.name}
                 </Toast.Header>
                 <Toast.Body>
-                  <ProgressBar
-                    animated={!file.error}
-                    variant={file.error ? "danger" : "primary"}
+                  <ProgressBar 
+                    animated={!file.error} striped
+                    variant={file.error ? "danger" : "success"}
                     now={file.error ? 100 : file.progress * 100}
                     label={
                       file.error
