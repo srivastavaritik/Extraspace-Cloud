@@ -65,7 +65,7 @@ export default function Dashboard() {
             {childLinks.map((childLink) => (
               <div
                 key={childLink.id}
-                style={{ maxWidth: "250px" }}
+                // style={{ maxWidth: "250px" }}
                 className="p-2"
               >
                 <Link link={childLink} />
