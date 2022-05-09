@@ -10,7 +10,7 @@ export default function Link({ link}) {
       className="btn btn-outline-warning text-truncate w-100"
     >
       <FontAwesomeIcon icon={faLink} className="mr-2" />
-      {link.name}
+      {link.name.substring(0, 15)}
     </a>
   );
 }
