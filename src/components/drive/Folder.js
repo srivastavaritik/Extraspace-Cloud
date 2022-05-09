@@ -12,7 +12,7 @@ export default function Folder({ folder }) {
         state: {folder : folder},
       }}
       as={Link}
-      variant="outline-dark"
+      variant="outline-secondary"
       className="text-truncate w-100"
     >
       <FontAwesomeIcon icon={faFolder} className="mr-2 ml-2" />
