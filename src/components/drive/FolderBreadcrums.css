@@ -1,0 +1,14 @@
+body{
+        font-family: 'Space Mono', monospace;
+}
+.bgcrum a{
+            font-family: 'Space Mono', monospace;
+font-weight: bold;
+padding: .2rem;
+    
+    text-decoration: none;
+    color: rgb(9, 71, 9);
+}
+.bgcrum{
+    background-color: #d7e2fa9c;
+}
