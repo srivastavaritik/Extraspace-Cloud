@@ -2,6 +2,7 @@ import React from "react";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 import { Link } from "react-router-dom";
+import './FolderBreadcrums.css';
 
 export default function FolderBreadcrums({ currentFolder }) {
   let path = currentFolder === ROOT_FOLDER ? [] : [ROOT_FOLDER];
@@ -9,7 +10,7 @@ export default function FolderBreadcrums({ currentFolder }) {
   return (
     <Breadcrumb
       className="flex-grow-1"
-      listProps={{ className: "bg-white pl-0 m-0" }}
+      listProps={{ className: "bgcrum pl-0 m-0" }}
     >
       {path.map((folder, index) => (
         <BreadcrumbItem
@@ -17,8 +18,9 @@ export default function FolderBreadcrums({ currentFolder }) {
           linkAs={Link}
           linkProps={{
             to: {
-                pathname: folder.id ? `/folder/${folder.id}` : "/",
-                state: { folder: { ...folder, path: path.slice(1, index) } },            },
+              pathname: folder.id ? `/folder/${folder.id}` : "/",
+              state: { folder: { ...folder, path: path.slice(1, index) } },
+            },
           }}
           className="text-truncate d-inline-block"
           style={{ maxWidth: "150px" }}
