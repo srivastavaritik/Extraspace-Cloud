@@ -7,7 +7,7 @@ export default function Link({ link}) {
     <a
       href={link.name}
       target="_blank"
-      className="btn btn-outline-primary text-truncate w-100"
+      className="btn btn-outline-warning text-truncate w-100"
     >
       <FontAwesomeIcon icon={faLink} className="mr-2" />
       {link.name}
