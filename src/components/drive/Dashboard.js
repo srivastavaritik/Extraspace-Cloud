@@ -29,7 +29,24 @@ export default function Dashboard() {
           <AddFolderButton currentFolder={folder} />
           <AddLinkButton currentFolder={folder} />
         </div>
-        {childFolders.length > 0 && <><hr /><h3>Folders</h3></>}
+        {childFolders.length > 0 && (
+          <>
+            <hr />
+            <h3
+              className="btn-light"
+              style={{
+                fontSize: "1.3rem",
+                color: "black",
+                width: "max-content",
+                padding: " .2rem 2rem .2rem .2rem",
+                borderRadius: ".5rem",
+                backgroundColor: "#c2d2df5e",
+              }}
+            >
+              Folders
+            </h3>
+          </>
+        )}
         {childFolders.length > 0 && (
           <div className="d-flex flex-wrap">
             {childFolders.map((childFolder) => (
@@ -43,7 +60,23 @@ export default function Dashboard() {
             ))}
           </div>
         )}
-        {childFolders.length > 0 && childFiles.length > 0 && <><hr /><h3>Files</h3></>}
+        {childFolders.length > 0 && childFiles.length > 0 && (
+          <>
+            <hr />
+            <h3
+              style={{
+                fontSize: "1.3rem",
+                color: "black",
+                width: "max-content",
+                padding: " .2rem 2rem .2rem .2rem",
+                borderRadius: ".5rem",
+                backgroundColor: "#c2d2df5e",
+              }}
+            >
+              Files
+            </h3>
+          </>
+        )}
         {childFiles.length > 0 && (
           <div className="d-flex flex-wrap">
             {childFiles.map((childFile) => (
@@ -59,13 +92,29 @@ export default function Dashboard() {
         )}
         {childFolders.length > 0 &&
           childFiles.length > 0 &&
-          childLinks.length > 0 && <><hr /><h3>Links</h3></>}
-          {childLinks.length > 0 && (
+          childLinks.length > 0 && (
+            <>
+              <hr />
+              <h3
+                style={{
+                  fontSize: "1.3rem",
+                  color: "black",
+                  width: "max-content",
+                  padding: " .2rem 2rem .2rem .2rem",
+                  borderRadius: ".5rem",
+                  backgroundColor: "#c2d2df5e",
+                }}
+              >
+                Links
+              </h3>
+            </>
+          )}
+        {childLinks.length > 0 && (
           <div className="d-flex flex-wrap">
             {childLinks.map((childLink) => (
               <div
                 key={childLink.id}
-                // style={{ maxWidth: "250px" }}
+                style={{ maxWidth: "250px" }}
                 className="p-2"
               >
                 <Link link={childLink} />
