@@ -35,53 +35,69 @@ const Login = () => {
     }
   };
 
-  return (<>
-  <NavBarComp/>
-    <CenteredContainer>
-      <div className="p-4 box">
-        <h2 className="mb-3 text-centre">Login</h2>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control
-              type="email"
-              placeholder="Email address"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
+  return (
+    <>
+      <NavBarComp />
+      <CenteredContainer>
+        <div className="p-4 box">
+          <h2
+            className="mb-3 text-centre"
+            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "beige" }}
+          >
+            Login
+          </h2>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="email"
+                placeholder="Email address"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
 
-          <div className="d-grid gap-2">
-            <Button variant="primary" type="Submit">
-              Log In
-            </Button>
+            <div className="d-grid gap-2">
+              <Button variant="primary" type="Submit">
+                Log In
+              </Button>
+            </div>
+          </Form>
+          <div className="w-100 text-center mt-3">
+            <Link
+              to="/forgot-password"
+              style={{ color: "rgb(186, 185, 183) " }}
+            >
+              Forgot Password?
+            </Link>
           </div>
-        </Form>
-        <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
+          <hr />
+          <div>
+            <GoogleButton
+              className="g-btn w-100"
+              type="dark"
+              onClick={handleGoogleSignIn}
+            />
           </div>
-        <hr />
-        <div>
-          <GoogleButton
-            className="g-btn w-100"
-            type="dark"
-            onClick={handleGoogleSignIn}
-          />
+          <div
+            className="p-4 box mt-3 text-center"
+            style={{ color: "rgb(186, 185, 183) " }}
+          >
+            Don't have an account?{" "}
+            <Link to="/signup" style={{ color: "blue" }}>
+              Sign up
+            </Link>
+          </div>
         </div>
-        <div className="p-4 box mt-3 text-center">
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </div>
-      </div>
-      
-    </CenteredContainer>
-    <Footer/>
+      </CenteredContainer>
+      <Footer />
     </>
   );
 };
