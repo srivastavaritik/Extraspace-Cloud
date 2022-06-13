@@ -13,7 +13,7 @@ export default function Folder({ folder }) {
       }}
       as={Link}
       variant="btn-outline-warning"
-      className="btn-outline-warning text-truncate w-100"
+      className="btn-outline-dark text-truncate w-100"
       
     >
       <FontAwesomeIcon icon={faFolder} className="mr-2 ml-2" />
