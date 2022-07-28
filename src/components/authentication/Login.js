@@ -42,7 +42,7 @@ const Login = () => {
         <div className="p-4 box">
           <h2
             className="mb-3 text-centre"
-            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "beige" }}
+            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "black" }}
           >
             Login
           </h2>
