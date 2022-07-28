@@ -7,8 +7,9 @@ font-weight: bold;
 padding: .2rem;
     
     text-decoration: none;
-    color: rgb(9, 71, 9);
+    color: rgb(163, 214, 255);
 }
 .bgcrum{
-    background-color: #d7e2fa9c;
+    color: aliceblue;
+    background-color: #0000009c;
 }
