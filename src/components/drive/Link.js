@@ -8,6 +8,7 @@ export default function Link({ link}) {
       href={link.name}
       target="_blank"
       className="btn btn-outline-dark text-truncate w-100"
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.75)", color: "white" }}
     >
       <FontAwesomeIcon icon={faLink} className="mr-2" />
       {link.name.substring(0, 15)}
