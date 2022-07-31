@@ -10,14 +10,18 @@ import { useParams, useLocation } from "react-router-dom";
 import FolderBreadcrums from "./FolderBreadcrums";
 import File from "./File";
 import Link from "./Link";
+import { deleteDoc } from "firebase/firestore";
 
 export default function Dashboard() {
   const { folderId } = useParams();
   const { state = {} } = useLocation();
-  const { folder, childFolders, childFiles, childLinks } = useFolder(
+  let { folder, childFolders, childFiles, childLinks } = useFolder(
     folderId,
     state
   );
+  const fileDeleteHandler =({fid})=>{
+    childFiles = childFiles.filter(f => f.id !== fid);
+  }
   // console.log(childFolders)
   return (
     <>
@@ -82,10 +86,10 @@ export default function Dashboard() {
             {childFiles.map((childFile) => (
               <div
                 key={childFile.id}
-                style={{ minWidth: "250px",margin:".5rem" }}
+                style={{ minWidth: "250px",margin:".5npm srem" }}
                 className="p-2"
               >
-                <File file={childFile} />
+                <File file={childFile} fileDeleteHandler={fileDeleteHandler}/>
               </div>
             ))}
           </div>

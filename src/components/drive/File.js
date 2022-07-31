@@ -1,8 +1,23 @@
-import { faFile } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import { getFirestore, doc, deleteDoc } from "firebase/firestore";
 
-export default function File({ file }) {
+export default function File({ file, fileDeleteHandler }) {
+  const db = getFirestore();
+
+  const fid = file.id;
+  const deleteHandler = () => {
+    const docRef = doc(db, "files", fid);
+
+    deleteDoc(docRef)
+      .then(() => {
+        console.log("Entire Document has been deleted successfully.");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    fileDeleteHandler(fid);
+    console.log({ file });
+  };
   return (
     <>
       <div
@@ -44,7 +59,7 @@ export default function File({ file }) {
             </a>
           </div>
           <div>
-            <a
+            <button
               href="#"
               className="btn btn-outline-dark"
               rel="noreferrer"
@@ -53,9 +68,10 @@ export default function File({ file }) {
                 color: "white",
                 margin: ".5rem",
               }}
+              onClick={deleteHandler}
             >
               Delete
-            </a>
+            </button>
           </div>
         </div>
       </div>
