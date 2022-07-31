@@ -1,9 +1,7 @@
 import React from "react";
-import { Button, Nav } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Navbar from 'react-bootstrap/Navbar'
-import { Link } from "react-router-dom";
 import 'material-icons/iconfont/material-icons.css';
-import ReactTooltip from 'react-tooltip';
 
 export default function Footer() {
     

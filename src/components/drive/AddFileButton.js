@@ -8,7 +8,7 @@ import { database, storage } from "../../firebase";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 import { v4 as uuidV4 } from "uuid";
 import ReactDOM from "react-dom";
-import { ProgressBar, Toast, ToastBody, ToastHeader } from "react-bootstrap";
+import { ProgressBar, Toast } from "react-bootstrap";
 
 export default function AddFileButton({ currentFolder }) {
   const [uploadingFiles, setUploadingFiles] = useState([]);
@@ -37,8 +37,7 @@ export default function AddFileButton({ currentFolder }) {
       (snapshot) => {
         // Observe state change events such as progress, pause, and resume
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes);
+        const progress = snapshot.bytesTransferred / snapshot.totalBytes;
         console.log("Upload is " + progress + "% done");
         switch (snapshot.state) {
           case "paused":
@@ -47,33 +46,36 @@ export default function AddFileButton({ currentFolder }) {
           case "running":
             console.log("Upload is running");
             break;
+          default:
+            console.log("default case");
+            break;
         }
-        setUploadingFiles(prevUploadingFiles => {
-          return prevUploadingFiles.map(uploadFile => {
+        setUploadingFiles((prevUploadingFiles) => {
+          return prevUploadingFiles.map((uploadFile) => {
             if (uploadFile.id === id) {
-              return { ...uploadFile, progress: progress }
+              return { ...uploadFile, progress: progress };
             }
 
-            return uploadFile
-          })
-        })
+            return uploadFile;
+          });
+        });
       },
       () => {
-        setUploadingFiles(prevUploadingFiles => {
-          return prevUploadingFiles.map(uploadFile => {
+        setUploadingFiles((prevUploadingFiles) => {
+          return prevUploadingFiles.map((uploadFile) => {
             if (uploadFile.id === id) {
-              return { ...uploadFile, error: true }
+              return { ...uploadFile, error: true };
             }
-            return uploadFile
-          })
-        })
+            return uploadFile;
+          });
+        });
       },
       () => {
-        setUploadingFiles(prevUploadingFiles => {
-          return prevUploadingFiles.filter(uploadFile => {
-            return uploadFile.id !== id
-          })
-        })
+        setUploadingFiles((prevUploadingFiles) => {
+          return prevUploadingFiles.filter((uploadFile) => {
+            return uploadFile.id !== id;
+          });
+        });
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadingTask.snapshot.ref).then(async (url) => {
@@ -113,16 +115,16 @@ export default function AddFileButton({ currentFolder }) {
               maxWidth: "250px",
             }}
           >
-            {uploadingFiles.map(file => (
+            {uploadingFiles.map((file) => (
               <Toast
-              className='bg-black'
+                className="bg-black"
                 key={file.id}
                 onClose={() => {
-                  setUploadingFiles(prevUploadingFiles => {
-                    return prevUploadingFiles.filter(uploadFile => {
-                      return uploadFile.id !== file.id
-                    })
-                  })
+                  setUploadingFiles((prevUploadingFiles) => {
+                    return prevUploadingFiles.filter((uploadFile) => {
+                      return uploadFile.id !== file.id;
+                    });
+                  });
                 }}
               >
                 <Toast.Header
@@ -132,8 +134,9 @@ export default function AddFileButton({ currentFolder }) {
                   {file.name}
                 </Toast.Header>
                 <Toast.Body>
-                  <ProgressBar 
-                    animated={!file.error} striped
+                  <ProgressBar
+                    animated={!file.error}
+                    striped
                     variant={file.error ? "danger" : "success"}
                     now={file.error ? 100 : file.progress * 100}
                     label={
@@ -149,5 +152,5 @@ export default function AddFileButton({ currentFolder }) {
           document.body
         )}
     </>
-  )
+  );
 }

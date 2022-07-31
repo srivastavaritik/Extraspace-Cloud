@@ -4,14 +4,11 @@ import { database, db } from "../../firebase";
 import {
   collection,
   getDoc,
-  getDocs,
   doc,
-  docs,
   orderBy,
   query,
   where,
   onSnapshot,
-  onSnapshotsInSync,
 } from "firebase/firestore";
 
 const ACTIONS = {

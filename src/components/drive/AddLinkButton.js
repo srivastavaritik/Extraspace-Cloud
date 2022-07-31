@@ -1,12 +1,10 @@
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadString } from 'firebase/storage';
 import React, { useState } from 'react';
 import { Button, Form, Modal, ModalBody, ModalFooter } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
-import { database, storage } from '../../firebase';
-import { ROOT_FOLDER } from '../hooks/useFolder';
+import { database } from '../../firebase';
 
 export default function AddLinkButton({currentFolder}) {
     const [open, setOpen] = useState(false);

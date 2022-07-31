@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import { useFolder } from "../hooks/useFolder";
 import AddFolderButton from "./AddFolderButton";
@@ -60,7 +60,7 @@ export default function Dashboard() {
             ))}
           </div>
         )}
-        {childFolders.length > 0 && childFiles.length > 0 && (
+        {childFiles.length > 0 && (
           <>
             <hr />
             <h3
@@ -82,7 +82,7 @@ export default function Dashboard() {
             {childFiles.map((childFile) => (
               <div
                 key={childFile.id}
-                style={{ maxWidth: "250px" }}
+                style={{ minWidth: "250px",margin:".5rem" }}
                 className="p-2"
               >
                 <File file={childFile} />
@@ -90,8 +90,7 @@ export default function Dashboard() {
             ))}
           </div>
         )}
-        {childFolders.length > 0 &&
-          childFiles.length > 0 &&
+        {
           childLinks.length > 0 && (
             <>
               <hr />
