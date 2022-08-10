@@ -73,7 +73,7 @@ const Login = () => {
           <div className="w-100 text-center mt-3">
             <Link
               to="/forgot-password"
-              style={{ color: "rgb(186, 185, 183) " }}
+              style={{ color: "black" }}
             >
               Forgot Password?
             </Link>
@@ -88,7 +88,7 @@ const Login = () => {
           </div>
           <div
             className="p-4 box mt-3 text-center"
-            style={{ color: "rgb(186, 185, 183) " }}
+            style={{ color: "black" }}
           >
             Don't have an account?{" "}
             <Link to="/signup" style={{ color: "blue" }}>
