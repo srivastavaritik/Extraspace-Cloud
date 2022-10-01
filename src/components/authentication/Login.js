@@ -55,7 +55,6 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Control
                 type="password"
@@ -71,10 +70,7 @@ const Login = () => {
             </div>
           </Form>
           <div className="w-100 text-center mt-3">
-            <Link
-              to="/forgot-password"
-              style={{ color: "black" }}
-            >
+            <Link to="/forgot-password" style={{ color: "black" }}>
               Forgot Password?
             </Link>
           </div>
@@ -86,10 +82,7 @@ const Login = () => {
               onClick={handleGoogleSignIn}
             />
           </div>
-          <div
-            className="p-4 box mt-3 text-center"
-            style={{ color: "black" }}
-          >
+          <div className="p-4 box mt-3 text-center" style={{ color: "black" }}>
             Don't have an account?{" "}
             <Link to="/signup" style={{ color: "blue" }}>
               Sign up
