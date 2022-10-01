@@ -70,7 +70,7 @@ const Login = () => {
             </div>
           </Form>
           <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password" style={{ color: "black" }}>
+            <Link to="/forgot-password" style={{ color: "#5885AF" }}>
               Forgot Password?
             </Link>
           </div>
