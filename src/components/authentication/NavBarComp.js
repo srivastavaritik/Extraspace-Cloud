@@ -1,14 +1,13 @@
 import React from "react";
-import Navbar from 'react-bootstrap/Navbar'
+import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import 'material-icons/iconfont/material-icons.css';
-import logo from '../drive/cloudlogo.png'
+import "material-icons/iconfont/material-icons.css";
+import logo from "../drive/cloudlogo.png";
 
 export default function NavBarComp() {
-    
   return (
     <Navbar
-      className="display-flex text-center col px-md-5 ps-2"
+      className="display-flex text-center col px-md-5 ps-2 shadow-lg p-3 mb-5  "
       bg="dark"
       variant="dark"
     >
