@@ -1,4 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap");
+
 .modal-content {
   background-color: #212529 !important;
   color: white;
+}
+
+/* rocket animation on about page */
+@keyframes rocketfly {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+
+  100% {
+    transform: translate(50vh, 100vw);
+  }
 }

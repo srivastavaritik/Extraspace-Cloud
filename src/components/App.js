@@ -7,6 +7,7 @@ import Login from "./authentication/Login";
 import PrivateRoute from "./authentication/PrivateRoute";
 import ForgotPassword from "./authentication/ForgotPassword";
 import UpdateProfile from "./authentication/UpdateProfile";
+import About from "./authentication/About";
 import Dashboard from "./drive/Dashboard";
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           {/* Authentication */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </AuthProvider>
