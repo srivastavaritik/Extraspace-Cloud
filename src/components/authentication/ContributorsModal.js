@@ -19,7 +19,36 @@ function ContributorsModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+  <Modal.Header>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Developers
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div
+          style={{
+            display: "flex",
+            flex: "wrap",
+            gap: "1rem",
+          }}
+        >
+          <a key="srivastavaritik" href="https://github.com/srivastavaritik" target="_blank">
+                <img
+                  style={{ width: "180px", borderRadius: "1rem" }}
+                  src="https://avatars.githubusercontent.com/u/78131705?v=4"
+                  alt="srivastavaritik"
+                />
+          </a>
+          <a key="AKD-01" href="https://github.com/AKD-01" target="_blank">
+                <img
+                  style={{ width: "180px", borderRadius: "1rem" }}
+                  src="https://avatars.githubusercontent.com/u/83454075?v=4"
+                  alt="AKD-01"
+                />
+          </a>
+        </div>
+      </Modal.Body>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
           Contributors
         </Modal.Title>
