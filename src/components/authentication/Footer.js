@@ -24,7 +24,7 @@ export default function Footer() {
           className="btn btn-outline-success mx-2 fs-.1 mb-0"
           onClick={() => setModalShow(true)}
         >
-          Contributors
+          Developers
         </button>
       </div>
       <div>
