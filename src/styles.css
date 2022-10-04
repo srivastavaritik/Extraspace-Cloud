@@ -7,6 +7,10 @@
   color: white;
 }
 
+.profile-container{
+  min-height: calc(100vh - 2em) !important;
+}
+
 /* rocket animation on about page */
 @keyframes rocketfly {
   0% {
