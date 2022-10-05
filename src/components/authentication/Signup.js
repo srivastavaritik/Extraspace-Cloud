@@ -87,7 +87,7 @@ export default function Signup() {
           {/* </Card.Body> */}
           <div
             className="w-100 text-center mt-2"
-            style={{ color: "black" }}
+            style={{ color: "black", fontWeight: "bolder"}}
           >
             Already have an account?{" "}
             <Link to="/login" style={{ color: "blue" }}>
