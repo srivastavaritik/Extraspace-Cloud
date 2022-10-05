@@ -44,7 +44,7 @@ export default function Signup() {
           {/* <Card.Body> */}
           <h2
             className="text-center mb-4"
-            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "beige" }}
+            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "black" }}
           >
             Sign Up
           </h2>
@@ -87,7 +87,7 @@ export default function Signup() {
           {/* </Card.Body> */}
           <div
             className="w-100 text-center mt-2"
-            style={{ color: "rgb(186, 185, 183) " }}
+            style={{ color: "Black" }}
           >
             Already have an account?{" "}
             <Link to="/login" style={{ color: "blue" }}>
