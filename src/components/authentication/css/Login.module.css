@@ -1,0 +1,17 @@
+.container{
+    box-sizing: content-box;
+    width: 100%;
+    max-width: 30rem;
+    margin: 15px auto 20px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%), 0 6px 20px 0 rgb(0 0 0 / 60%);
+    background: #eff2f3;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 6px;
+    word-wrap: break-word;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
