@@ -24,7 +24,15 @@ export default function Profile() {
   return (<>
     <NavbarComponent logout={handleLogout}/>
     <CenteredContainer>
-      <Card>
+      <Card
+        style = {{
+        padding: "2rem",
+        marginTop: "7rem",
+        borderRadius: "1rem",
+        backgroundColor: "#ffffffc2",
+        boxShadow: "1px 1px 1rem black"
+        }}
+      >
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -34,7 +42,7 @@ export default function Profile() {
           </Link>
         </Card.Body>
         <div className="w-100 text-center mt-2">
-          <Button variant="link" onClick={handleLogout}>
+          <Button variant="dark" onClick={handleLogout}>
             Log Out
           </Button>
         </div>
