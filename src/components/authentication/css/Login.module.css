@@ -17,3 +17,10 @@
     right: 50%;
     transform: translate(50%,-50%);
 }
+
+/* @resp */
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 80%;
+    }
+  }
