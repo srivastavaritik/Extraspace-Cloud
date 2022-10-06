@@ -1,0 +1,26 @@
+.container{
+    padding: 1.5rem !important;
+    background: #ffffff42 !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+    border: none !important;
+    border-radius: 13px !important;
+    box-shadow: 0px 0px 20px 2px #008b9d !important;
+    font-family: 'PT Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+/* @resp */
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 80%;
+    }
+  }

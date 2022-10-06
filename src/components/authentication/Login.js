@@ -6,6 +6,7 @@ import GoogleButton from "react-google-button";
 import CenteredContainer from "./CenteredContainer";
 import NavBarComp from "./NavBarComp";
 import Footer from "./Footer";
+import styles from './css/Login.module.css'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -39,7 +40,7 @@ const Login = () => {
     <>
       <NavBarComp />
       <CenteredContainer>
-        <div className="p-4 box">
+        <div className={["p-4 box", styles['container']].join(' ')}>
           <h2
             className="mb-3 text-centre"
             style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "black" }}
