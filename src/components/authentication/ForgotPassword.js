@@ -4,6 +4,8 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import CenteredContainer from "./CenteredContainer";
 import './css/ForgotPassword.css';
+import NavBarComp from "./NavBarComp";
+import Footer from "./Footer";
 
 export default function ForgotPassword() {
   const emailRef = useRef()
@@ -29,6 +31,8 @@ export default function ForgotPassword() {
   }
 
   return (
+    <>
+    <NavBarComp />
     <CenteredContainer>
       <div className="ForgotPassword">
       <Card>
@@ -56,5 +60,7 @@ export default function ForgotPassword() {
       </div>
      
     </CenteredContainer>
+    <Footer />
+    </>
   )
 }

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import CenteredContainer from "./CenteredContainer"
 import NavBarComp from "./NavBarComp"
 import Footer from "./Footer"
+import './css/Signup.css'
 
 export default function Signup() {
   const emailRef = useRef()
@@ -38,14 +39,12 @@ export default function Signup() {
     <>
       <NavBarComp />
       <CenteredContainer>
-        <div className="p-4 box">
+        <div className="signup">
+        <div className="card">
           {" "}
           {/* <Card> */}
           {/* <Card.Body> */}
-          <h2
-            className="text-center mb-4"
-            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "black" }}
-          >
+          <h2>
             Sign Up
           </h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -95,6 +94,7 @@ export default function Signup() {
             </Link>
           </div>
           {/* </Card> */}
+        </div>
         </div>
       </CenteredContainer>
       <Footer />

@@ -1,0 +1,12 @@
+Nav{
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0.5rem 3rem !important;
+    
+}
+.navbar-brand{
+    display: flex;
+    align-items: baseline;
+}
