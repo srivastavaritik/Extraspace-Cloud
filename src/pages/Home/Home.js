@@ -3,9 +3,11 @@ import shape from '../../assets/shape.png';
 import logo from '../../assets/logo.png';
 import template from '../../assets/template.png';
 import './Home.css';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
 	const [currentTheme, setCurrentTheme] = useState('light');
+	const [isNavActive, setNavActive] = useState(false);
 
 	const handleTheme = () => {
 		currentTheme === 'light' ? setCurrentTheme('dark') : setCurrentTheme('light');
@@ -13,7 +15,7 @@ const Home = () => {
 
 	return (
 		<main>
-			<div className={`big-wrapper ${currentTheme} copy`}>
+			<div className={`big-wrapper ${currentTheme} copy ${isNavActive ? 'active' : ''}`}>
 				<img src={shape} alt='' className='shape' />
 
 				<header>
@@ -35,21 +37,21 @@ const Home = () => {
 									<a href='#'>Contact Us</a>
 								</li>
 								<li>
-									<a href='#' className='btn'>
+									<NavLink to='/signup' className='btn'>
 										Sign up
-									</a>
+									</NavLink>
 								</li>
 								<li>
-									<a href='#' className='btn'>
+									<NavLink to='/login' className='btn'>
 										LogIn
-									</a>
+									</NavLink>
 								</li>
 							</ul>
 						</div>
 
 						<div className='overlay'></div>
 
-						<div className='hamburger-menu'>
+						<div className='hamburger-menu' onClick={() => setNavActive((prevVal) => !prevVal)}>
 							<div className='bar'></div>
 						</div>
 					</div>
@@ -67,9 +69,9 @@ const Home = () => {
 								qui ex perferendis vitae!
 							</p>
 							<div className='cta'>
-								<a href='#' className='btn'>
+								<NavLink to='/signup' className='btn'>
 									Get started
-								</a>
+								</NavLink>
 							</div>
 						</div>
 
