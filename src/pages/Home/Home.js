@@ -31,7 +31,7 @@ const Home = () => {
 									<a href='#'>Features</a>
 								</li>
 								<li>
-									<a href='#'>About</a>
+									<NavLink to='/about'>About</NavLink>
 								</li>
 								<li>
 									<a href='#'>Contact Us</a>
