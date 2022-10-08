@@ -41,3 +41,15 @@ Nav {
     width: 100%;
     justify-content: flex-end;
   }
+
+  @media (max-width:450px){
+    .links{
+      display: none;
+    }
+    .right{
+      display: none;
+    }
+    .navbar-brand span{
+      font-size: 1.5rem;
+    }
+}
