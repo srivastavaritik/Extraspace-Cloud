@@ -11,7 +11,6 @@ export default function FolderBreadcrums({ currentFolder }) {
     <Breadcrumb
       className="flex-grow-1"
       listProps={{ className: "bgcrum pl-0 m-0" }}
-    
     >
       {path.map((folder, index) => (
         <BreadcrumbItem
@@ -33,7 +32,7 @@ export default function FolderBreadcrums({ currentFolder }) {
       {currentFolder && (
         <BreadcrumbItem
           className="text-truncate d-inline-block"
-          style={{ maxWidth: "200px", color:"white"}}
+          style={{ maxWidth: "200px" }}
           active
         >
           {currentFolder.name}
