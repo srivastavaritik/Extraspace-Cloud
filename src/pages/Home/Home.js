@@ -5,7 +5,7 @@ import shape from '../../assets/shape.png';
 import template from '../../assets/template.png';
 import MoonIcon from '../../components/icons/Moon';
 import SunIcon from '../../components/icons/Sun';
-import './Home.css';
+import './home.css';
 
 const Home = () => {
 	const [currentTheme, setCurrentTheme] = useState('light');
