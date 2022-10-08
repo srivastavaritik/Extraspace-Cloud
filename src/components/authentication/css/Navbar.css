@@ -1,0 +1,55 @@
+Nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem 3rem !important;
+
+  background: linear-gradient(134deg, #181818 73%, #00bdd6 72%) !important;
+}
+.left{
+    display: flex;
+    width: 100%;
+}
+.navbar-brand {
+  display: flex;
+  align-items: baseline;
+  width: 100% !important;
+  font-family: 'Ubuntu', sans-serif;
+}
+.navbar-brand span{
+    font-family: "Dancing Script", cursive;
+    color: aqua;
+    font-size: 2rem;
+    padding: 0;
+    
+  }
+
+  .nav-link{
+    color: white !important;
+  }
+
+  .links{
+    margin-left: 11rem;
+    display: flex;
+  }
+  .nav-link:hover{
+    text-shadow: 0px 0px 10px #00ffde;
+  }
+
+  .right{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  @media (max-width:450px){
+    .links{
+      display: none;
+    }
+    .right{
+      display: none;
+    }
+    .navbar-brand span{
+      font-size: 1.5rem;
+    }
+}
