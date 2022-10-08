@@ -19,7 +19,6 @@ const Home = () => {
 		<main>
 			<div className={`big-wrapper ${currentTheme} copy ${isNavActive ? 'active' : ''}`}>
 				<img src={shape} alt='' className='shape' />
-
 				<header>
 					<div className='container'>
 						<div className='logo'>
