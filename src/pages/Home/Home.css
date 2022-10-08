@@ -38,8 +38,7 @@ body {
 }
 
 .icon {
-	color: var(--backgroundColor);
-	background-color: var(--darkTwo);
+	fill: var(--backgroundColor);
 }
 
 img {
@@ -124,7 +123,7 @@ header .container {
 	transform: scale(1.05);
 }
 
-.btn {
+.btn-home {
 	display: inline-block;
 	padding: 0.9rem 1.9rem;
 	color: #fff !important;
@@ -134,7 +133,7 @@ header .container {
 	transition: 0.3s;
 }
 
-.btn:hover {
+.btn-home:hover {
 	background-color: var(--hoverColor) !important;
 	transform: scale(1) !important;
 }
@@ -224,7 +223,9 @@ header .container {
 }
 
 .toggle-btn {
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border: none;
 	background: var(--darkTwo);
 	color: var(--backgroundColor);

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import shape from '../../assets/shape.png';
-import logo from '../../assets/logo.png';
-import template from '../../assets/template.png';
-import './Home.css';
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.png';
+import shape from '../../assets/shape.png';
+import template from '../../assets/template.png';
+import MoonIcon from '../../components/icons/Moon';
+import SunIcon from '../../components/icons/Sun';
+import './Home.css';
 
 const Home = () => {
 	const [currentTheme, setCurrentTheme] = useState('light');
@@ -37,12 +39,12 @@ const Home = () => {
 									<a href='#'>Contact Us</a>
 								</li>
 								<li>
-									<NavLink to='/signup' className='btn'>
+									<NavLink to='/signup' className='btn-home'>
 										Sign up
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/login' className='btn'>
+									<NavLink to='/login' className='btn-home'>
 										LogIn
 									</NavLink>
 								</li>
@@ -69,7 +71,7 @@ const Home = () => {
 								qui ex perferendis vitae!
 							</p>
 							<div className='cta'>
-								<NavLink to='/signup' className='btn'>
+								<NavLink to='/signup' className='btn-home'>
 									Get started
 								</NavLink>
 							</div>
@@ -84,8 +86,8 @@ const Home = () => {
 				<div className='bottom-area'>
 					<div className='container'>
 						<button className='toggle-btn' onClick={handleTheme}>
-							{currentTheme === 'light' && <i class='fa-solid fa-moon'></i>}
-							{currentTheme === 'dark' && <i className='fa-solid fa-sun'></i>}
+							{currentTheme === 'light' && <MoonIcon className='icon' />}
+							{currentTheme === 'dark' && <SunIcon className='icon' />}
 						</button>
 					</div>
 				</div>
