@@ -1,10 +1,5 @@
-import NavBarComp from "./NavBarComp"
-
-
 export default function About() {
   return (
-    <>
-    <NavBarComp />
     <div
       className="w-100"
       style={{
@@ -112,6 +107,5 @@ export default function About() {
         alt="rocket vector"
       />
     </div>
-    </>
   );
 }
