@@ -1,111 +1,85 @@
-export default function About() {
+import React from "react";
+import "./css/about.css";
+
+import dataSecurity from "./images/data-security.svg";
+import wallet from "./images/wallet.svg";
+import decentralize from "./images/decentralize.svg";
+
+export default function AboutDemo() {
   return (
-    <div
-      className="w-100"
-      style={{
-        minHeight: "100vh",
-        overflow: "hidden",
-        background:
-          "linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 25%)), url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700363293.jpg)",
-        backgroundSize: "cover",
-      }}
-    >
-      <header style={{ position: "relative", zIndex: "1" }}>
-        <h1
-          className="text-uppercase text-center"
-          style={{
-            fontFamily: "'Tourney', cursive",
-            color: "#fff",
-            fontSize: "56px",
-            fontWeight: "bold",
-            backgroundColor: "rgba(31, 62, 88, 0.425)",
-          }}
-        >
-          About
-        </h1>
-        <p
-          className="text-center mt-5 pb-5 mx-auto"
-          style={{
-            fontFamily: "'Caveat', cursive",
-            color: "#b5414b",
-            width: "90vw",
-            filter: "drop-shadow(1px 1px #fff3f3)",
-            fontSize: "2.5rem",
-          }}
-        >
-          Extraspace Cloud: A cloud where you can create folders, upload files
-          and links and can access it from anywhere...
-        </p>
-      </header>
-      <div className="mt-5 px-4 fs-4" style={{ color: "hwb(0deg 90% 10%)" }}>
-        <p className="text-center mx-auto" style={{ maxWidth: "600px" }}>
-          The code repository of the application can be accessed on GitHub
-          through the link below
-        </p>
-
-        <button
-          className="btn d-block mx-auto fs-3 px-4 mb-5"
-          style={{ background: "black", color: "#fff" }}
-        >
-          <a
-            href="https://github.com/srivastavaritik/extraspace-cloud"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "#fff", textDecoration: "none" }}
-          >
-            Github
-          </a>
-        </button>
-        <p className="pt-5">
-          Although there are many such applications available on the internet,
-          this application is quite unique when it comes to its features and
-          use-cases.
-        </p>
-        <p>
-          Users can create their account here and start uploading their files,
-          folders and links.
-        </p>
-        <p>
-          <strong>Data security</strong> is necessary and is a right of all
-          internet users. Keeping that in mind we are now working on making our
-          application decentralized with the help of <strong>blockchain</strong>
-          .
-        </p>
-        <p className="mt-5">
-          After the implementation of blockchain in our application:
-        </p>
-        <ul>
-          <div className="ms-4">
-            <li>
-              The users can use it with the help of their MetaMask wallet.
-            </li>
-            <li>
-              Users will be able to track and store their crypto transaction
-              directly through our application which will guarantee privacy and
-              data security to all its users in a real sense.
-            </li>
-            <li>
-              Since the application will be decentralized, there is no chance of
-              data breach or privacy/security issues.
-            </li>
+    <div className="about">
+      <div className="logo" />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-7">
+            <div className="abt-cont">
+              <div className="row">
+                <div className="abt-title">About Us</div>
+                <div className="abt-desc">
+                Extraspace Cloud: A cloud where you can <br />
+                  <span style={{ color: "#5055cc" }}>
+                    Create folders, Upload files and links and can access it
+                    from anywhere
+                  </span>
+                </div>
+                <div className="abt-content">
+                  Although there are many such applications available on the
+                  internet, this application is quite unique when it comes to
+                  its features and use-cases. Users can create their account
+                  here and start uploading their files, folders and links.
+                  <br />
+                  The users can use it with the help of their MetaMask wallet
+                </div>
+                <div
+                  className="git-btn"
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/srivastavaritik/extraspace-cloud"
+                    )}
+                >
+                  Github Repo
+                </div>
+              </div>
+            </div>
+            <div className="features">
+              {/* <div className="features-heading">Why Choose Us</div> */}
+              <div className="row">
+                <div className="col-sm-12 col-md-6 col-lg-4 p-3">
+                  <div className="feature-top">
+                    <img className="feature-img" src={dataSecurity} alt="" />
+                    <div className="feature-topic">DATA SECURITY</div>
+                  </div>
+                  <div className="feature-content">
+                    We are now working on making our application decentralized
+                    with the help of blockchain to make it secure.
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-6 col-lg-4 p-3">
+                  <div className="feature-top">
+                    <img className="feature-img" src={wallet} alt="" />
+                    <div className="feature-topic">Crypto Wallet</div>
+                  </div>
+                  <div className="feature-content">
+                    Users will be able to track and store their crypto
+                    transaction in our application which will guarantee data
+                    security to users.
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-6 col-lg-4 p-3">
+                  <div className="feature-top">
+                    <img className="feature-img" src={decentralize} alt="" />
+                    <div className="feature-topic">Decentralized</div>
+                  </div>
+                  <div className="feature-content">
+                    Since the application will be decentralized, there is no
+                    chance of data breach or privacy/security issues.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </ul>
-        <p className="text-center text-uppercase mt-5 py-3 text-decoration-underline">
-          The main theme of our application is Data Security.
-        </p>
+        </div>
       </div>
-
-      <img
-        style={{
-          width: "300px",
-          position: "absolute",
-          transform: "rotate(45deg)",
-          animation: "rocketfly 5s linear alternate-reverse",
-          top: 0,
-        }}
-        src="https://www.freepnglogos.com/uploads/rocket-png/rocket-cartoon-transparent-png-svg-vector-19.png"
-        alt="rocket vector"
-      />
     </div>
   );
 }
