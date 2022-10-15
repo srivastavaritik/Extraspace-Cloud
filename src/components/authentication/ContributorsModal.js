@@ -30,6 +30,7 @@ function ContributorsModal(props) {
             display: "flex",
             flex: "wrap",
             gap: "1rem",
+            flexWrap: "wrap",
           }}
         >
           <a key="srivastavaritik" href="https://github.com/srivastavaritik" target="_blank">
