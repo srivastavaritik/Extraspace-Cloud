@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         
+        
         {
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
