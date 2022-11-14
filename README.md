@@ -12,6 +12,7 @@ We are now working on making our application decentralized with the help of bloc
 
 ● Crypto Wallet :
 Users will be able to track and store their crypto transaction in our application which will guarantee data security to users.
+(In fact, we are now even deployed on Blockchain)
 
 ● Decentralized :
 Since the application will be decentralized, there is no chance of data breach or privacy/security issues.
