@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from 'react-bootstrap/Navbar'
+import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import 'material-icons/iconfont/material-icons.css';
-import logo from '../drive/cloudlogo.png'
+import "material-icons/iconfont/material-icons.css";
+import logo from "../drive/cloudlogo.png";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function NavBarComp() {
-    
+  const { handleDarkMode } = useAuth();
+
   return (
     <Navbar
       className="display-flex text-center col px-md-5 ps-2"
@@ -18,6 +20,13 @@ export default function NavBarComp() {
         </span>
         <span style={{ letterSpacing: "0.1rem" }}>ExtraSpace Drive</span>
       </Navbar.Brand>
+      <span
+        onClick={handleDarkMode}
+        style={{ color: "#fff", cursor: "pointer" }}
+        className="material-icons ms-auto fs-2"
+      >
+        shield_moon
+      </span>
     </Navbar>
   );
 }

@@ -12,12 +12,13 @@ import Dashboard from "./drive/Dashboard";
 
 function App() {
   return (
-    <Router >
+    <Router>
       <AuthProvider>
         <Routes>
           {/* Drive */}
           <Route
-             exact path="/"
+            exact
+            path="/"
             element={
               <PrivateRoute>
                 <Dashboard />
@@ -25,7 +26,8 @@ function App() {
             }
           />
           <Route
-             exact path="/folder/:folderId"
+            exact
+            path="/folder/:folderId"
             element={
               <PrivateRoute>
                 <Dashboard />
