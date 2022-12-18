@@ -17,6 +17,61 @@ Users will be able to track and store their crypto transaction in our applicatio
 ● Decentralized :
 Since the application will be decentralized, there is no chance of data breach or privacy/security issues.
 
+<h2>:arrow_right:Installation Guide:</h2>
+✴️ First, fork the repository (Click the <b><b>Fork</b></b> button in the top right corner of the page).
+
+✴️ Clone the forked repository to your local machine.
+
+```markdown
+git clone https://github.com/your_username/Extraspace-Cloud.git
+```
+
+✴️ Add upstream URL 
+```markdown
+git remote add upstream https://github.com/srivastavaritik/Extraspace-Cloud.git
+```
+
+✴️ Create a new branch
+
+```markdown
+git checkout -b branch_name
+```
+
+✴️ Make your contribution
+✴️ Commit and push the changes
+
+```markdown
+git add .
+git commit -m 'Your message'
+git push origin branch_name
+```
+
+✴️ Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
+
+✴️ Wait for your PR review and approval from the maintainers.
+
+✴️ Star ⭐ this repository if you liked it and you can also follow me 👀 .
+
+✴️ Check your HacktoberFest progress here (https://hacktoberfest.digitalocean.com/profile)
+
+
+<h2>:arrow_right:Contribution Guide:</h2>
+:point_right:You must fork the repo.      
+
+:point_right:After doing `npm start`, create your account on the website and be familiar with the interface.   
+
+:point_right:You are adviced to make your own branch for contributing.     
+
+:point_right:Now you can either create an issue to request some changes or adding features or improving styling.   
+
+:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `hacktoberfest` and start working that issue and once you complete, you can raise a pull request.     
+
+:point_right:Once I review your code and if it seems okay then your branch will be merged.   
+
+:point_right:Bonus Tip: If you are new to GitHub and using terminal does no suit you, then you can use <a href="https://desktop.github.com/">GitHub Desktop</a>. 
+
+:point_right:Once you Complete your one contribution and if your profile is not showing here on the markdown file as a contributor, then please raise an issue.
+<h1>:arrow_right:Code of Conduct:</h1>
 
 ## 	:game_die: Shoutout to all the contributors ❤️
 
