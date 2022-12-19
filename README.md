@@ -52,8 +52,6 @@ git push origin branch_name
 
 ✴️ Star ⭐ this repository if you liked it and you can also follow me 👀 .
 
-✴️ Check your HacktoberFest progress here (https://hacktoberfest.digitalocean.com/profile)
-
 
 <h2>:arrow_right:Contribution Guide:</h2>
 :point_right:You must fork the repo.      
