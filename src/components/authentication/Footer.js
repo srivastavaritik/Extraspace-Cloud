@@ -16,7 +16,7 @@ export default function Footer() {
       variant="dark"
     >
       <div>
-        <ContributorsModal
+        {/* <ContributorsModal
           show={modalShow}
           onHide={() => setModalShow(false)}
         />
@@ -25,7 +25,7 @@ export default function Footer() {
           onClick={() => setModalShow(true)}
         >
           Developers
-        </button>
+        </button> */}
       </div>
       <div>
         <Link to="/about">
