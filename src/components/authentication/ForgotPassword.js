@@ -59,7 +59,7 @@ export default function ForgotPassword() {
           </Card>
         </div>
       </CenteredContainer>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
