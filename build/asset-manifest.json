@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9e3aaad.css",
-    "main.js": "/static/js/main.c2d4ec4a.js",
+    "main.css": "/static/css/main.c8a98a6b.css",
+    "main.js": "/static/js/main.c434c865.js",
     "static/media/material-icons-two-tone.woff": "/static/media/material-icons-two-tone.862d6cd39626a9ddf097.woff",
     "static/media/material-icons-two-tone.woff2": "/static/media/material-icons-two-tone.4cd0b540933d1628c224.woff2",
     "static/media/material-icons-round.woff": "/static/media/material-icons-round.1d2975b71bddc932cb7e.woff",
@@ -12,12 +12,17 @@
     "static/media/material-icons-outlined.woff2": "/static/media/material-icons-outlined.c32fc86b5d23fdcfcd4d.woff2",
     "static/media/material-icons-sharp.woff2": "/static/media/material-icons-sharp.3a0d3ee832500dda50c5.woff2",
     "static/media/material-icons.woff2": "/static/media/material-icons.90170fbdd3dad451d44d.woff2",
+    "static/media/abtBg.jpg": "/static/media/abtBg.f71fc71698150ae8df2d.jpg",
+    "static/media/cloudlogo.png": "/static/media/cloudlogo.3615b2b75cb009089991.png",
     "index.html": "/index.html",
-    "main.c9e3aaad.css.map": "/static/css/main.c9e3aaad.css.map",
-    "main.c2d4ec4a.js.map": "/static/js/main.c2d4ec4a.js.map"
+    "static/media/data-security.svg": "/static/media/data-security.b1f7021b7aac41adc8d365602a461ca5.svg",
+    "static/media/decentralize.svg": "/static/media/decentralize.116d7660a12f79242b1b6739c927844a.svg",
+    "static/media/wallet.svg": "/static/media/wallet.1440f6d7f12122364d835fdfc414dd56.svg",
+    "main.c8a98a6b.css.map": "/static/css/main.c8a98a6b.css.map",
+    "main.c434c865.js.map": "/static/js/main.c434c865.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9e3aaad.css",
-    "static/js/main.c2d4ec4a.js"
+    "static/css/main.c8a98a6b.css",
+    "static/js/main.c434c865.js"
   ]
 }
