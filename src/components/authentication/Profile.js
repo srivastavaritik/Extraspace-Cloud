@@ -9,19 +9,21 @@ import styles from "./css/Profile.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import malepicUrl from './images/man_avatar.png'
+import femalepicUrl from './images/women_avatar.png'
 
 export default function Profile() {
   const [error, setError] = useState("");
   const inputRef = useRef(null);
   const { currentUser, logout } = useAuth();
   const [name,setName]=useState(currentUser.displayName)
-  const [profilephotoURL,setprofilephotoURL]=useState(currentUser.photoURL);
+  const [gender, setGender] = React.useState('M');
   const history = useNavigate();
 
-  const defaultpicURL="https://bootdey.com/img/Content/avatar/avatar7.png"
-  const updateUserName = async (newName,newpicURL) => {
+  let profilePhotoUrl=gender==='M'?malepicUrl :femalepicUrl;
+  const updateUserName = async (newName) => {
     try {
-      await updateProfile(currentUser, { displayName: newName,photoURL:newpicURL });
+      await updateProfile(currentUser, { displayName: newName });
       console.log('User name updated successfully.');
     } catch (error) {
       console.error('Error updating user name:', error);
@@ -35,6 +37,10 @@ export default function Profile() {
   const handleEditClick = () => {
     inputRef.current.focus();
   };
+  const handleToggle = () => {
+    setGender(gender === 'M' ? 'F' : 'M');
+  };
+  
   async function handleLogout() {
     setError("");
 
@@ -60,7 +66,7 @@ export default function Profile() {
       >
         <Card.Body>
           <div className={styles.profile}>
-            <img className={styles.profileImg}  src="" alt="Profile-Img" />
+            <img className={styles.profileImg}  src={profilePhotoUrl} alt="Profile-Img" />
            <div className={styles.inputArea}>
             <input className={styles.nameInput} ref={inputRef}
                 value={name} placeholder="Click to Change Name" onChange={handleNameChange}/>
@@ -69,6 +75,13 @@ export default function Profile() {
                 </div>
             </div> 
             <p>{currentUser.email}</p>
+            <div className={styles.genderToggle}>
+            <div className={`${styles.toggleButton} ${styles[gender]}`} onClick={handleToggle}>
+                <div className={styles.slider}></div>
+              </div>
+              <span>{gender}</span>
+            </div>
+
           </div> 
                       
         </Card.Body>

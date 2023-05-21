@@ -1,4 +1,4 @@
-.profile,.icons{
+.profile,.icons,.genderToggle{
     display: flex;
 }
 .profile{
@@ -33,3 +33,39 @@
   .glowingEditIcon:hover {
     color: rgb(206, 170, 81); 
   }
+
+  .genderToggle {
+    align-items: center;
+  }
+  .toggleButton {
+    width: 42px;
+    height: 22px;
+    border-radius: 15px;
+    background-color: #a8cfd3;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .toggleButton .slider {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #13bed5;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.8s ease;
+  }
+  
+  .M .slider {
+    left: 3px;
+  }
+  
+  .F .slider {
+    left: 22px;
+  }
+  
+  span {
+    margin-left: 10px;
+  }
+  

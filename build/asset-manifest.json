@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c8a98a6b.css",
-    "main.js": "/static/js/main.c434c865.js",
+    "main.css": "/static/css/main.d91f31f1.css",
+    "main.js": "/static/js/main.3b7c6130.js",
     "static/media/material-icons-two-tone.woff": "/static/media/material-icons-two-tone.862d6cd39626a9ddf097.woff",
     "static/media/material-icons-two-tone.woff2": "/static/media/material-icons-two-tone.4cd0b540933d1628c224.woff2",
     "static/media/material-icons-round.woff": "/static/media/material-icons-round.1d2975b71bddc932cb7e.woff",
@@ -18,11 +18,11 @@
     "static/media/data-security.svg": "/static/media/data-security.b1f7021b7aac41adc8d365602a461ca5.svg",
     "static/media/decentralize.svg": "/static/media/decentralize.116d7660a12f79242b1b6739c927844a.svg",
     "static/media/wallet.svg": "/static/media/wallet.1440f6d7f12122364d835fdfc414dd56.svg",
-    "main.c8a98a6b.css.map": "/static/css/main.c8a98a6b.css.map",
-    "main.c434c865.js.map": "/static/js/main.c434c865.js.map"
+    "main.d91f31f1.css.map": "/static/css/main.d91f31f1.css.map",
+    "main.3b7c6130.js.map": "/static/js/main.3b7c6130.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8a98a6b.css",
-    "static/js/main.c434c865.js"
+    "static/css/main.d91f31f1.css",
+    "static/js/main.3b7c6130.js"
   ]
 }
