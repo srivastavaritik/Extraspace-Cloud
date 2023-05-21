@@ -97,7 +97,7 @@ export default function AddFileButton({ currentFolder }) {
   }
   return (
     <>
-      <label className="btn btn-outline-success btn-sm mx-2">
+      <label className="btn btn-outline-success btn-sm mx-2" style={{fontSize: "2rem", width: "4rem"}}>
         <FontAwesomeIcon icon={faFileUpload} />
         <input
           type="file"
