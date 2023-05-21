@@ -35,7 +35,7 @@ export default function NavBarComp() {
         <span>
           <img style={{ width: "3rem" }} src={logo} alt="" />
         </span>
-        <span ref={textRef} style={{ letterSpacing: "0.1rem", fontFamily: "serif", fontSize: "1.6rem" }}>ExtraSpace Drive</span>
+        <span ref={textRef} style={{ letterSpacing: "0.1rem", fontFamily: "serif", fontSize: "1.3rem" }}>ExtraSpace Drive</span>
       </Navbar.Brand>
     </Navbar>
   );
