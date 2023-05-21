@@ -43,7 +43,7 @@ const Login = () => {
         <div className={["p-4 box", styles['container']].join(' ')}>
           <h2
             className="mb-3 text-centre"
-            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "black" }}
+            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "white" }}
           >
             Login
           </h2>
@@ -71,7 +71,7 @@ const Login = () => {
             </div>
           </Form>
           <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password" style={{ color: "black" }}>
+            <Link to="/forgot-password" style={{ color: "white" }}>
               Forgot Password?
             </Link>
           </div>
@@ -83,7 +83,7 @@ const Login = () => {
               onClick={handleGoogleSignIn}
             />
           </div>
-          <div className="p-4 box mt-3 text-center" style={{ color: "black" }}>
+          <div className="p-4 box mt-3 text-center" style={{ color: "white" }}>
             Don't have an account?{" "}
             <Link to="/signup" style={{ color: "blue" }}>
               Sign up
