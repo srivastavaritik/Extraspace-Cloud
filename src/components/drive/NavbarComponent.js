@@ -34,15 +34,16 @@ export default function NavbarComponent(props) {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ms-auto">
-          <Nav.Link as={Link} to="/about" style={{ marginBottom: "2px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
+          <Nav.Link as={Link} to="/about" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
             About
           </Nav.Link>
-          <Nav.Link as={Link} to="/user" style={{ marginBottom: "2px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
+          <Nav.Link as={Link} to="/user" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
             Profile
           </Nav.Link>
-          <Nav.Link as={Link} to="/contact" style={{ marginBottom: "2px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
+          <Nav.Link href="https://github.com/srivastavaritik" target="_blank" rel="noopener noreferrer" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
             Contact Us
           </Nav.Link>
+
         </Nav>
         <Nav>
           <Nav.Link
@@ -51,7 +52,7 @@ export default function NavbarComponent(props) {
             as={Link}
             to="/user"
             className="material-icons"
-            style={{ color: darkMode ? "#5CE1E6" : "black" }}
+            style={{ marginLeft: "25px", color: darkMode ? "#5CE1E6" : "black" }}
             onClick={props.logout}
           >
             logout
@@ -59,7 +60,7 @@ export default function NavbarComponent(props) {
           <ReactTooltip id="test" />
         </Nav>
       </Navbar.Collapse>
-      <div className={`dark-mode-toggle ${darkMode ? "white" : ""}`} onClick={handleDarkModeToggle}>
+      <div className={`dark-mode-toggle ${darkMode ? "white" : ""}`} onClick={handleDarkModeToggle} style={{ marginLeft: "25px" }}>
         {darkMode ? (
           <FontAwesomeIcon icon={faSun} color="white" />
         ) : (
