@@ -1,4 +1,21 @@
 # ExtraSpace Cloud 
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+<img src="https://forthebadge.com/images/badges/uses-brains.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+  <br>
+  <img src="https://img.shields.io/github/repo-size/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-closed-raw/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+   <img src="https://img.shields.io/github/issues-pr/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  <img src="https://img.shields.io/github/last-commit/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  
+  <img src="https://img.shields.io/github/contributors/srivastavaritik/Extraspace-Cloud?style=for-the-badge" />
+  </div>
+
 A cloud where one can create folders, upload files and links. It helps in keeping all the documents, files, and links together at one place and saves some space on the personal device and much more.
 
 
