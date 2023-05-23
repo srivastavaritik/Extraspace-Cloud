@@ -1,0 +1,79 @@
+.signup_card {
+    padding: 2rem;
+    border-radius: 13px;
+    background: #ffffff42;
+    border-radius: 13px;
+    box-shadow: 0px 0px 20px 2px #008b9d;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    font-family: 'PT Sans', sans-serif;
+    margin: 2rem auto;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .signup_card h2 {
+    filter: drop-shadow(1px 1px #2d6076);
+    color: black;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  .signup_card .form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #ddd;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0.5rem 0;
+    transition: border-color 0.3s ease;
+    font-size: 1rem;
+  }
+
+.fullWidth {
+    width: 100%;
+  }
+  
+
+  .signup_card .form-control:focus {
+    outline: none;
+    border-color: #008b9d;
+  }
+  
+  .signup_card .btn {
+    width: 100%;
+    padding: 0.75rem;
+    transition: 0.3s ease-in all;
+    background-color: #008b9d;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(1);
+  }
+  
+  .signup_card .btn:hover {
+    background-color: #0d72bf;
+    transform: scale(1);
+  }
+  
+  .signup_card .text-center {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  .signup_card .text-center a {
+    color: blue;
+  }
+  
+  .signup_card .text-center a:hover {
+    text-decoration: underline;
+  }
+
+  .customLink:hover {
+    color: red;
+    /* Add additional styles for the hover effect */
+  }
+  
+  

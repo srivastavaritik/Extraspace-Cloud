@@ -6,7 +6,7 @@ import GoogleButton from "react-google-button";
 import CenteredContainer from "./CenteredContainer";
 import NavBarComp from "./NavBarComp";
 import Footer from "./Footer";
-import styles from './css/Login.module.css'
+import styles from './css/Login.module.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -40,54 +40,48 @@ const Login = () => {
     <>
       <NavBarComp />
       <CenteredContainer>
-        <div className={["p-4 box", styles['container']].join(' ')}>
-          <h2
-            className="mb-3 text-centre"
-            style={{ filter: "drop-shadow(1px 1px #2d6076 ", color: "black" }}
-          >
-            Login
-          </h2>
+        <div className={styles.container}>
+          <h2 className={`${styles.heading} mb-4`}>Login</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group controlId="formBasicEmail" className="mb-3">
               <Form.Control
                 type="email"
                 placeholder="Email address"
+                className={styles.input}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group controlId="formBasicPassword" className="mb-4">
               <Form.Control
                 type="password"
                 placeholder="Password"
+                className={styles.input}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
 
-            <div className="d-grid gap-2">
-              <Button variant="primary" type="Submit">
-                Log In
-              </Button>
-            </div>
+            <Button variant="primary" type="submit" className={styles.button}>
+              Log In
+            </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password" style={{ color: "black" }}>
-              Forgot Password?
-            </Link>
+          <div className={`${styles.forgotPassword} mt-3`}>
+            <Link to="/forgot-password">Forgot Password?</Link>
           </div>
-          <hr />
+          <hr className={styles.divider} />
           <div>
-            <GoogleButton
-              className="g-btn w-100"
-              type="dark"
-              onClick={handleGoogleSignIn}
-            />
+<div>
+  <GoogleButton
+    className={styles.google}
+    type="dark"
+    onClick={handleGoogleSignIn}
+  />
+</div>
+
+
           </div>
-          <div className="p-4 box mt-3 text-center" style={{ color: "black" }}>
-            Don't have an account?{" "}
-            <Link to="/signup" style={{ color: "blue" }}>
-              Sign up
-            </Link>
+          <div className={`${styles.signup} mt-3`}>
+            Don't have an account? <Link to="/signup">Sign up</Link>
           </div>
         </div>
       </CenteredContainer>

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import CenteredContainer from "./CenteredContainer";
 import NavBarComp from "./NavBarComp";
 import Footer from "./Footer";
+import styles from './css/Signup.module.css';
 
 export default function Signup() {
   const emailRef = useRef();
@@ -13,7 +14,7 @@ export default function Signup() {
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +39,7 @@ export default function Signup() {
     <>
       <NavBarComp />
       <CenteredContainer>
-        <div className="p-4 box signup_card">
+      <div className={`${styles.container} ${styles.signup_card}`}>
           {" "}
           {/* <Card> */}
           {/* <Card.Body> */}
@@ -53,6 +54,7 @@ export default function Signup() {
             <Form.Group id="email">
               {/* <Form.Label>Email</Form.Label> */}
               <Form.Control
+              className={styles.fullWidth}
                 placeholder="Email address"
                 type="email"
                 ref={emailRef}
