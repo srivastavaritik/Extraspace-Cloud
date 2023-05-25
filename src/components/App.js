@@ -9,6 +9,7 @@ import ForgotPassword from "./authentication/ForgotPassword";
 import UpdateProfile from "./authentication/UpdateProfile";
 import About from "./authentication/About";
 import Dashboard from "./drive/Dashboard";
+import PageNotFound from "./authentication/PageNotFound";
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+
+          {/* Page Not Found  */}
+          <Route path="*" element={ <PageNotFound /> } />
         </Routes>
       </AuthProvider>
     </Router>
