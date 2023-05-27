@@ -10,7 +10,7 @@ export default function NavbarComponent(props) {
     
   return (
     <Navbar
-      className="display-flex justify-content-between col px-md-5"
+      className="display-flex justify-content-between col px-md-4"
       bg="dark"
       variant="dark"
       style={{ paddingTop: "0", paddingBottom: "0" }}

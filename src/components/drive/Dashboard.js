@@ -27,7 +27,7 @@ export default function Dashboard() {
     <>
       <NavbarComponent />
       <Container fluid className="pt-2 pb-2">
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center bg-black p-2">
           <FolderBreadcrums currentFolder={folder} />
           <AddFileButton currentFolder={folder} />
           <AddFolderButton currentFolder={folder} />
@@ -41,13 +41,15 @@ export default function Dashboard() {
               style={{
                 fontSize: "1.3rem",
                 color: "black",
-                width: "max-content",
-                padding: " .2rem 2rem .2rem .2rem",
-                borderRadius: ".5rem",
+                width: "120px",
+                textAlign:"center",
+                padding: " .2rem .2rem .2rem .2rem",
+                borderRadius: "2px",
                 backgroundColor: "#c2d2df5e",
+                marginLeft:"10px"
               }}
             >
-              Folders
+              {"> "}Folders
             </h3>
           </>
         )}
