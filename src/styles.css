@@ -17,11 +17,3 @@
     transform: translate(50vh, 100vw);
   }
 }
-button{
-  color:lightgray!important;
-  border: solid 1px lightgray !important;
-}
-button:hover{
-  color:white!important;
-  border: solid 1px white !important;
-}
