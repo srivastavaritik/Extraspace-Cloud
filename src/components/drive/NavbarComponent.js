@@ -4,22 +4,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import 'material-icons/iconfont/material-icons.css';
 import ReactTooltip from 'react-tooltip';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import logo from './cloudlogo.png';
 
 export default function NavbarComponent(props) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
     <Navbar
-      className={`display-flex justify-content-between col px-md-5 ${darkMode ? "navbar-dark" : "navbar-light"}`}
-      bg={darkMode ? "dark" : "light"}
-      variant={darkMode ? "dark" : "light"}
+      className={`display-flex justify-content-between col px-md-5 navbar-dark`}
+      bg="dark"
       style={{ paddingTop: "0", paddingBottom: "0" }}
       expand="lg"
     >
@@ -30,17 +22,17 @@ export default function NavbarComponent(props) {
         <span style={{ letterSpacing: "0.2rem" }}>ExtraSpace</span>
       </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ marginRight: "25px" }} />
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ms-auto">
-          <Nav.Link as={Link} to="/about" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
+          <Nav.Link as={Link} to="/about" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: "#5CE1E6"}}>
             About
           </Nav.Link>
-          <Nav.Link as={Link} to="/user" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
+          <Nav.Link as={Link} to="/user" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: "#5CE1E6" }}>
             Profile
           </Nav.Link>
-          <Nav.Link href="https://github.com/srivastavaritik" target="_blank" rel="noopener noreferrer" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: darkMode ? "#5CE1E6" : "black" }}>
+          <Nav.Link href="https://github.com/srivastavaritik" target="_blank" rel="noopener noreferrer" style={{ marginBottom: "2px", marginLeft: "25px", fontSize: "20px", color: "#5CE1E6"}}>
             Contact Us
           </Nav.Link>
 
@@ -52,7 +44,7 @@ export default function NavbarComponent(props) {
             as={Link}
             to="/user"
             className="material-icons"
-            style={{ marginLeft: "25px", color: darkMode ? "#5CE1E6" : "black" }}
+            style={{ marginLeft: "25px", color: "#5CE1E6" }}
             onClick={props.logout}
           >
             logout
@@ -60,13 +52,6 @@ export default function NavbarComponent(props) {
           <ReactTooltip id="test" />
         </Nav>
       </Navbar.Collapse>
-      <div className={`dark-mode-toggle ${darkMode ? "white" : ""}`} onClick={handleDarkModeToggle} style={{ marginLeft: "25px" }}>
-        {darkMode ? (
-          <FontAwesomeIcon icon={faSun} color="white" />
-        ) : (
-          <FontAwesomeIcon icon={faMoon} />
-        )}
-      </div>
     </Navbar>
   );
 }
