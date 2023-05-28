@@ -89,6 +89,13 @@
     </style>
   </head>
   <body>
+    <script>
+       // tooltip javascript
+  const tooltips = document.querySelectorAll(".tt");
+  tooltips.forEach(t => {
+   new bootstrap.Tooltip(t);
+  });
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

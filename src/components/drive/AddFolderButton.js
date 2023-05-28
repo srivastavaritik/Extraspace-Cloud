@@ -1,36 +1,36 @@
 import React, { useState } from "react";
 import { Button, Form, Modal, ModalBody, ModalFooter } from "react-bootstrap";
 import { database } from "../../firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore"; 
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useAuth } from "../../contexts/AuthContext";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 
-export default function AddFolderButton({currentFolder}) {
+export default function AddFolderButton({ currentFolder }) {
   const [open, setOpen] = useState(false);
-    const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
   const [name, setName] = useState("");
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if(currentFolder == null) return
 
-    const path = [...currentFolder.path]
-    if(currentFolder !== ROOT_FOLDER){
-        path.push({name: currentFolder.name, id: currentFolder.id})
+    if (currentFolder == null) return;
+
+    const path = [...currentFolder.path];
+    if (currentFolder !== ROOT_FOLDER) {
+      path.push({ name: currentFolder.name, id: currentFolder.id });
     }
 
     //Create a folder in database
     const docRef = await addDoc(collection(database, "folders"), {
-        name: name,
-        parentId: currentFolder.id,
-        userId: currentUser.uid,
-        path: path,
-        createdAt:serverTimestamp()
-      });
-      console.log("folderdocrefname", docRef.name)
-      console.log("Document written with ID: ", docRef.id);
+      name: name,
+      parentId: currentFolder.id,
+      userId: currentUser.uid,
+      path: path,
+      createdAt: serverTimestamp(),
+    });
+    console.log("folderdocrefname", docRef.name);
+    console.log("Document written with ID: ", docRef.id);
 
     setName("");
     closeModal();
@@ -43,9 +43,10 @@ export default function AddFolderButton({currentFolder}) {
   };
   return (
     <>
-      <div  className='btn btn-outline-success btn-sm mx-2' onClick={openModal}>
-        <FontAwesomeIcon icon={faFolderPlus}/>
-    </div>
+      <div className="btn btn-outline-success btn-sm mx-2 tt" data-bs-placement="bottom" title="create folder" onClick={openModal}>
+          <FontAwesomeIcon icon={faFolderPlus} />
+      </div>
+
       <Modal show={open} onHide={closeModal}>
         <Form onSubmit={handleSubmit}>
           <ModalBody>

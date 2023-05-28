@@ -42,7 +42,7 @@ export default function AddLinkButton({currentFolder}) {
     closeModal();
   };
     return (<>
-      <label className='btn btn-outline-success btn-sm ms-2' onClick={openModal}>
+      <label className='btn btn-outline-success btn-sm ms-2' data-bs-placement="bottom" title="add url" onClick={openModal}>
           <FontAwesomeIcon icon={faLink}/>
       </label>
             <Modal show={open} onHide={closeModal}>

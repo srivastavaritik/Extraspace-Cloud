@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 import { Container } from "react-bootstrap";
 import { useFolder } from "../hooks/useFolder";
 import AddFolderButton from "./AddFolderButton";
@@ -11,7 +11,6 @@ import FolderBreadcrums from "./FolderBreadcrums";
 import File from "./File";
 import Link from "./Link";
 import { deleteDoc } from "firebase/firestore";
-
 export default function Dashboard() {
   const { folderId } = useParams();
   const { state = {} } = useLocation();
@@ -23,13 +22,15 @@ export default function Dashboard() {
     childFiles = childFiles.filter(f => f.id !== fid);
   }
   // console.log(childFolders)
+
   return (
     <>
       <NavbarComponent />
       <Container fluid className="pt-2 pb-2">
         <div className="d-flex align-items-center">
           <FolderBreadcrums currentFolder={folder} />
-          <AddFileButton currentFolder={folder} />
+          <AddFileButton currentFolder={folder} 
+          />
           <AddFolderButton currentFolder={folder} />
           <AddLinkButton currentFolder={folder} />
         </div>
