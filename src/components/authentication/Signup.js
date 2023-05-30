@@ -107,10 +107,7 @@ export default function Signup() {
           >
             Sign Up
           </h2>
-<<<<<<< Updated upstream
           {error && <Alert variant= {alertColor}>{error}</Alert>}
-=======
->>>>>>> Stashed changes
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" id="email">
               {/* <Form.Label>Email</Form.Label> */}
