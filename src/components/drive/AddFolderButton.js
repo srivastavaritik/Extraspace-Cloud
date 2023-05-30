@@ -6,6 +6,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-hot-toast";
 
 export default function AddFolderButton({currentFolder}) {
   const [open, setOpen] = useState(false);
@@ -31,6 +32,21 @@ export default function AddFolderButton({currentFolder}) {
       });
       console.log("folderdocrefname", docRef.name)
       console.log("Document written with ID: ", docRef.id);
+      toast.success(
+        <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              transition: 'slide-in-right',
+            }}
+          >
+            <span style={{ marginRight: '0.9em' }}>Folder Created - "{name}" <span role="img" aria-label="Success">🎉</span></span>
+          </div>,
+          {
+            autoClose: 3000,
+            hideProgressBar: true,
+          }
+      );
 
     setName("");
     closeModal();

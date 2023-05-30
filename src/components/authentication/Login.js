@@ -6,7 +6,8 @@ import GoogleButton from "react-google-button";
 import CenteredContainer from "./CenteredContainer";
 import NavBarComp from "./NavBarComp";
 import Footer from "./Footer";
-import styles from './css/Login.module.css'
+import styles from './css/Login.module.css';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,8 +21,38 @@ const Login = () => {
     setError("");
     try {
       await login(email, password);
+      toast.success(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Logged in successfully! <span role="img" aria-label="Success">👍</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       navigate("/");
     } catch (err) {
+      toast.error(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Failed to login <span role="img" aria-label="Failed">🚫</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       setError(err.message);
     }
   };
@@ -30,8 +61,38 @@ const Login = () => {
     e.preventDefault();
     try {
       await googleSignIn();
+      toast.success(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Logged in successfully! <span role="img" aria-label="Success">👍</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       navigate("/");
     } catch (er) {
+      toast.error(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Failed to login <span role="img" aria-label="Failed">🚫</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       console.log(er);
     }
   };

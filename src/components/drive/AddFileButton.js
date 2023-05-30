@@ -9,10 +9,12 @@ import { ROOT_FOLDER } from "../hooks/useFolder";
 import { v4 as uuidV4 } from "uuid";
 import ReactDOM from "react-dom";
 import { ProgressBar, Toast } from "react-bootstrap";
+import { toast } from "react-hot-toast";
 
 export default function AddFileButton({ currentFolder }) {
   const [uploadingFiles, setUploadingFiles] = useState([]);
   const { currentUser } = useAuth();
+
   async function handleUpload(e) {
     const file = e.target.files[0];
     if (currentFolder == null || file == null) return;
@@ -47,7 +49,7 @@ export default function AddFileButton({ currentFolder }) {
             console.log("Upload is running");
             break;
           default:
-            console.log("default case");
+            console.log("Default case");
             break;
         }
         setUploadingFiles((prevUploadingFiles) => {
@@ -69,6 +71,23 @@ export default function AddFileButton({ currentFolder }) {
             return uploadFile;
           });
         });
+
+        toast.error(
+          <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                transition: 'slide-in-right',
+              }}
+            >
+              <span style={{ marginRight: '0.9em' }}> File Upload failed <span role="img" aria-label="Fail">⚠️</span></span>
+            </div>,
+            {
+              autoClose: 3000,
+              hideProgressBar: true,
+            }
+        );
+
       },
       () => {
         setUploadingFiles((prevUploadingFiles) => {
@@ -77,6 +96,21 @@ export default function AddFileButton({ currentFolder }) {
           });
         });
         // Handle successful uploads on complete
+        toast.success(
+          <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                transition: 'slide-in-right',
+              }}
+            >
+              <span style={{ marginRight: '0.9em' }}> File Uploaded <span role="img" aria-label="Success">🎉</span></span>
+            </div>,
+            {
+              autoClose: 3000,
+              hideProgressBar: true,
+            }
+        );
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadingTask.snapshot.ref).then(async (url) => {
           console.log("File available at", url);
@@ -135,6 +169,12 @@ export default function AddFileButton({ currentFolder }) {
                 </Toast.Header>
                 <Toast.Body>
                   <ProgressBar
+                    style={{
+                      height: '18px',
+                      borderRadius: '7px',
+                      backgroundColor: '#e5e5e5',
+                      animationDuration: '1.5s'
+                    }}
                     animated={!file.error}
                     striped
                     variant={file.error ? "danger" : "success"}

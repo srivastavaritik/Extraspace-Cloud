@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { Button, Form, Modal, ModalBody, ModalFooter } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { database } from '../../firebase';
+import { toast } from 'react-hot-toast';
 
 export default function AddLinkButton({currentFolder}) {
     const [open, setOpen] = useState(false);
@@ -37,6 +38,21 @@ export default function AddLinkButton({currentFolder}) {
       console.log("name",name)
       console.log("docrefname",docRef.name)
       console.log("Link written with ID: ", docRef.id);
+      toast.success(
+        <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              transition: 'slide-in-right',
+            }}
+          >
+            <span style={{ marginRight: '0.9em' }}> Link Added <span role="img" aria-label="Success">🎉</span></span>
+          </div>,
+          {
+            autoClose: 3000,
+            hideProgressBar: true,
+          }
+      );
 
     setName("");
     closeModal();

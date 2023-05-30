@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getFirestore, doc, deleteDoc } from "firebase/firestore";
+import { toast } from "react-hot-toast";
 
 export default function File({ file, fileDeleteHandler }) {
   const db = getFirestore();
@@ -17,6 +18,21 @@ export default function File({ file, fileDeleteHandler }) {
       });
     fileDeleteHandler(fid);
     console.log({ file });
+    toast.success(
+      <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}> File Deleted <span role="img" aria-label="Deleted">🗑️</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+    );
   };
   return (
     <>

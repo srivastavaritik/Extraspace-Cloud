@@ -6,6 +6,7 @@ import CenteredContainer from "./CenteredContainer";
 import NavBarComp from "./NavBarComp";
 import "./css/ForgotPassword.css";
 import Footer from "./Footer";
+import { toast } from "react-hot-toast";
 
 export default function ForgotPassword() {
   const emailRef = useRef();
@@ -21,13 +22,68 @@ export default function ForgotPassword() {
       setMessage("");
       setError("");
       setLoading(true);
-      await resetPassword(emailRef.current.value);
+      const email = emailRef.current.value;
+      await resetPassword(email);
+      const maskedEmail = maskEmail(email);
+      toast.success(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>
+            Mail sent to {maskedEmail}{' '}
+            <span
+              role="img"
+              aria-label="Success"
+              style={{ color: 'red', transition: 'slide-in-right' }}
+            >
+              ✉️
+            </span>
+          </span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       setMessage("Check your inbox for further instructions");
     } catch {
+      toast.error(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Failed to reset password <span role="img" aria-label="Failed">🚫</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       setError("Failed to reset password");
     }
 
     setLoading(false);
+  }
+
+  function maskEmail(email) {
+    const parts = email.split("@");
+    const username = parts[0];
+    const domain = parts[1];
+    const maskedUsername = maskCharacters(username, 4);
+    return `${maskedUsername}@${domain}`;
+  }
+  
+  function maskCharacters(string, numVisible) {
+    const visibleChars = string.slice(0, numVisible);
+    const maskedChars = "*".repeat(string.length - numVisible);
+    return visibleChars + maskedChars;
   }
 
   return (

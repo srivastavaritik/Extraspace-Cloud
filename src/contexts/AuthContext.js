@@ -11,6 +11,7 @@ import {
   updateEmail,
   updatePassword
 } from "firebase/auth";
+import { toast } from "react-hot-toast";
 const AuthContext = createContext()
 
 export function useAuth() {

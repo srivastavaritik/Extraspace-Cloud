@@ -11,6 +11,7 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import malepicUrl from './images/man_avatar.png'
 import femalepicUrl from './images/women_avatar.png'
+import { toast } from "react-hot-toast";
 
 export default function Profile() {
   const [error, setError] = useState("");
@@ -24,8 +25,38 @@ export default function Profile() {
   const updateUserName = async (newName) => {
     try {
       await updateProfile(currentUser, { displayName: newName });
+      toast.success(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>User name updated successfully <span role="img" aria-label="Success">✔️</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       console.log('User name updated successfully.');
     } catch (error) {
+      toast.error(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Error updating user name <span role="img" aria-label="Failed">😔</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       console.error('Error updating user name:', error);
     }
     setName(currentUser.displayName);
@@ -43,11 +74,40 @@ export default function Profile() {
   
   async function handleLogout() {
     setError("");
-
     try {
       await logout();
+      toast.success(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>You are logged out <span role="img" aria-label="Bye">👋</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       history("/login");
     } catch {
+      toast.error(
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'slide-in-right',
+          }}
+        >
+          <span style={{ marginRight: '0.9em' }}>Failed to logout <span role="img" aria-label="Failed">⚠️</span></span>
+        </div>,
+        {
+          autoClose: 3000,
+          hideProgressBar: true,
+        }
+      );
       setError("Failed to log out");
     }
   }
