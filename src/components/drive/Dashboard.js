@@ -28,14 +28,17 @@ const SearchBox = ({ onSearch }) => {
 
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} style={{ display: 'flex', alignItems: 'center' }}>
       <input
         type="text"
         placeholder="Search..."
         value={searchTerm}
         onChange={handleInputChange}
+        style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '10px', fontSize: '12px' }}
       />
-      <button type="submit">Search</button>
+      <button type="submit" style={{ marginLeft: '8px', padding: '8px', backgroundColor: 'blue',fontSize: '12px',  color: 'white', borderRadius: '10px', border:'none' }}>
+        Search
+      </button>
     </form>
   );
 };
