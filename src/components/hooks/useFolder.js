@@ -70,7 +70,7 @@ export function useFolder(folderId = null, folder = null) {
     dispatch({ type: ACTIONS.SELECT_FOLDER, payload: { folderId, folder } });
   }, [folderId, folder]);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (folderId == null) {
       return dispatch({
         type: ACTIONS.UPDATE_FOLDER,

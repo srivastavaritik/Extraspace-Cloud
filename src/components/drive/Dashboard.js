@@ -10,11 +10,42 @@ import { useParams, useLocation } from "react-router-dom";
 import FolderBreadcrums from "./FolderBreadcrums";
 import File from "./File";
 import Link from "./Link";
-import { deleteDoc } from "firebase/firestore";
+import { useState } from 'react';
+
+
+var arr = [];
+const SearchBox = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    onSearch(searchTerm);
+  };
+
+
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={handleInputChange}
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
+
 
 export default function Dashboard() {
   const { folderId } = useParams();
   const { state = {} } = useLocation();
+  const [showSearch, setShowSearch] = useState(false);
+
   let { folder, childFolders, childFiles, childLinks } = useFolder(
     folderId,
     state
@@ -22,13 +53,26 @@ export default function Dashboard() {
   const fileDeleteHandler =({fid})=>{
     childFiles = childFiles.filter(f => f.id !== fid);
   }
-  // console.log(childFolders)
+  
+
+  const handleSearch = ( searchTerm ) => {
+    // arr = childFolders.filter(item => item.name === searchTerm);
+    // console.log(childFolders.length);
+    for(let i = 0; i < childFolders.length; i++){
+      if(childFolders[i].name === searchTerm) arr.push(childFolders[i]);
+    }
+    console.log(arr.length);
+    setShowSearch(true);  
+  };
+
   return (
     <>
       <NavbarComponent />
       <Container fluid className="pt-2 pb-2">
         <div className="d-flex align-items-center bg-black p-2">
+    
           <FolderBreadcrums currentFolder={folder} />
+          <SearchBox onSearch={ handleSearch } />
           <AddFileButton currentFolder={folder} />
           <AddFolderButton currentFolder={folder} />
           <AddLinkButton currentFolder={folder} />
@@ -53,8 +97,23 @@ export default function Dashboard() {
             </h3>
           </>
         )}
-        {childFolders.length > 0 && (
+       
+        {showSearch ? (
           <div className="d-flex flex-wrap">
+            {arr.map((childFolder) => (
+             
+              <div
+                key={childFolder.id}
+                style={{ maxWidth: "250px" }}
+                className="p-2"
+              >
+                <Folder folder={childFolder} />
+              </div>
+            ))}
+          </div>
+        ): (
+          <div className="d-flex flex-wrap">
+          {/* {console.log('clicked')} */}
             {childFolders.map((childFolder) => (
               <div
                 key={childFolder.id}
