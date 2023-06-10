@@ -83,7 +83,7 @@ git push origin branch_name
 
 :point_right:Once I review your code and if it seems okay then your branch will be merged.   
 
-:point_right:Bonus Tip: If you are new to GitHub and using terminal does no suit you, then you can use <a href="https://desktop.github.com/">GitHub Desktop</a>. 
+:point_right:Bonus Tip: If you are new to GitHub and using terminal does not suit you, then you can use <a href="https://desktop.github.com/">GitHub Desktop</a>. 
 
 :point_right:Once you Complete your one contribution and if your profile is not showing here on the markdown file as a contributor, then please raise an issue.
 <h1>:arrow_right:Code of Conduct:</h1>
