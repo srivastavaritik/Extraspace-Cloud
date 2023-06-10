@@ -56,8 +56,6 @@ export default function Dashboard() {
   
 
   const handleSearch = ( searchTerm ) => {
-    // arr = childFolders.filter(item => item.name === searchTerm);
-    // console.log(childFolders.length);
     for(let i = 0; i < childFolders.length; i++){
       if(childFolders[i].name === searchTerm) arr.push(childFolders[i]);
     }
