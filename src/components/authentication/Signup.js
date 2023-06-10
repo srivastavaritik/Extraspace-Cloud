@@ -13,13 +13,23 @@ export default function Signup() {
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [alertColor, setColor] = useState("danger");
+
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match");
+    }
+    
+    let len = passwordRef.current.value.length;
+    if(len < 4){
+      return setError("Too weak password");
+    } else if(len < 6){
+      setColor("warning");
+      return setError("Weak password");
     }
     setError("");
 
@@ -48,7 +58,7 @@ export default function Signup() {
           >
             Sign Up
           </h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <Alert variant= {alertColor}>{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               {/* <Form.Label>Email</Form.Label> */}
