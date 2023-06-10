@@ -36,7 +36,7 @@ const SearchBox = ({ onSearch }) => {
         onChange={handleInputChange}
         style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '10px', fontSize: '12px' }}
       />
-      <button type="submit" style={{ marginLeft: '8px', padding: '8px', backgroundColor: 'blue',fontSize: '12px',  color: 'white', borderRadius: '10px', border:'none' }}>
+      <button type="submit" style={{ marginLeft: '8px', padding: '8px', backgroundColor: 'green',fontSize: '12px',  color: 'white', borderRadius: '10px', border:'none' }}>
         Search
       </button>
     </form>
