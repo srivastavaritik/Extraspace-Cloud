@@ -5,13 +5,18 @@ import "../../styles.css";
 
 function ContributorsModal(props) {
   const [contributors, setContributors] = useState([]);
-  useEffect(async () => {
-    const data = await fetch(
-      "https://api.github.com/repos/srivastavaritik/Extraspace-Cloud/contributors"
-    );
-    const contributors = await data.json();
-    setContributors(contributors);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch(
+        "https://api.github.com/repos/srivastavaritik/Extraspace-Cloud/contributors"
+      );
+      const contributors = await data.json();
+      setContributors(contributors);
+    };
+
+    fetchData();
   }, []);
+
   return (
     <Modal
       {...props}
@@ -19,10 +24,8 @@ function ContributorsModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-  <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Developers
-        </Modal.Title>
+      <Modal.Header>
+        <Modal.Title id="contained-modal-title-vcenter">Developers</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div
@@ -30,22 +33,32 @@ function ContributorsModal(props) {
             display: "flex",
             flex: "wrap",
             gap: "1rem",
-            flexWrap: "wrap"
+            flexWrap: "wrap",
           }}
         >
-          <a key="srivastavaritik" href="https://github.com/srivastavaritik" target="_blank">
-                <img
-                  style={{ width: "180px", borderRadius: "1rem" }}
-                  src="https://avatars.githubusercontent.com/u/78131705?v=4"
-                  alt="srivastavaritik"
-                />
+          <a
+            key="srivastavaritik"
+            href="https://github.com/srivastavaritik"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              style={{ width: "180px", borderRadius: "1rem" }}
+              src="https://avatars.githubusercontent.com/u/78131705?v=4"
+              alt="srivastavaritik"
+            />
           </a>
-          <a key="AKD-01" href="https://github.com/AKD-01" target="_blank">
-                <img
-                  style={{ width: "180px", borderRadius: "1rem" }}
-                  src="https://avatars.githubusercontent.com/u/83454075?v=4"
-                  alt="AKD-01"
-                />
+          <a
+            key="AKD-01"
+            href="https://github.com/AKD-01"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              style={{ width: "180px", borderRadius: "1rem" }}
+              src="https://avatars.githubusercontent.com/u/83454075?v=4"
+              alt="AKD-01"
+            />
           </a>
         </div>
       </Modal.Body>
@@ -60,12 +73,17 @@ function ContributorsModal(props) {
             display: "flex",
             flex: "wrap",
             gap: "1rem",
-            flexWrap: "wrap"
+            flexWrap: "wrap",
           }}
         >
           {contributors.map((profile) => {
             return (
-              <a key={profile.login} href={profile.html_url} target="_blank">
+              <a
+                key={profile.login}
+                href={profile.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   style={{ width: "48px", borderRadius: "100%" }}
                   src={profile.avatar_url}

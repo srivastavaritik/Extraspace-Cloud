@@ -16,7 +16,7 @@ const ACTIONS = {
   UPDATE_FOLDER: "update-folder",
   SET_CHILD_FOLDERS: "set-child-folders",
   SET_CHILD_FILES: "set-child-files",
-  SET_CHILD_LINKS:"set-child-links"
+  SET_CHILD_LINKS: "set-child-links",
 };
 
 export const ROOT_FOLDER = { name: "Root", id: null, path: [] };
@@ -29,7 +29,7 @@ function reducer(state, { type, payload }) {
         folder: payload.folder,
         childFiles: [],
         childFolders: [],
-        childLinks:[]
+        childLinks: [],
       };
     case ACTIONS.UPDATE_FOLDER:
       return {
@@ -41,16 +41,16 @@ function reducer(state, { type, payload }) {
         ...state,
         childFolders: payload.childFolders,
       };
-      case ACTIONS.SET_CHILD_FILES:
+    case ACTIONS.SET_CHILD_FILES:
       return {
         ...state,
         childFiles: payload.childFiles,
-      }
-      case ACTIONS.SET_CHILD_LINKS:
+      };
+    case ACTIONS.SET_CHILD_LINKS:
       return {
         ...state,
         childLinks: payload.childLinks,
-      }
+      };
     default:
       return state;
   }
@@ -62,7 +62,7 @@ export function useFolder(folderId = null, folder = null) {
     folder,
     childFolders: [],
     childFiles: [],
-    childLinks:[]
+    childLinks: [],
   });
   const { currentUser } = useAuth();
 
@@ -70,12 +70,14 @@ export function useFolder(folderId = null, folder = null) {
     dispatch({ type: ACTIONS.SELECT_FOLDER, payload: { folderId, folder } });
   }, [folderId, folder]);
 
-  useEffect(async () => {
-    if (folderId == null) {
-      return dispatch({
-        type: ACTIONS.UPDATE_FOLDER,
-        payload: { folder: ROOT_FOLDER },
-      });
+  useEffect(() => {
+    async function fetchData() {
+      if (folderId == null) {
+        return dispatch({
+          type: ACTIONS.UPDATE_FOLDER,
+          payload: { folder: ROOT_FOLDER },
+        });
+      }
     }
     const docRef = doc(database, "folders", folderId);
     getDoc(docRef)
@@ -92,7 +94,8 @@ export function useFolder(folderId = null, folder = null) {
           payload: { folder: ROOT_FOLDER },
         });
       });
-  }, [folderId]);
+    fetchData();
+  }, [folderId, dispatch]);
 
   useEffect(() => {
     const q = query(
