@@ -23,9 +23,15 @@ export default function Dashboard() {
     childFiles = childFiles.filter(f => f.id !== fid);
   }
 
+  const folderDeleteHandler = ({foid}) => {
+    childFolders = childFolders.filter(f => f.id !== foid);
+  }
+  
   const linkDeleteHandler = ({lid}) => {
     childLinks = childLinks.filter(l => l.id !== lid);
   }
+
+ 
   
   // console.log(childFolders)
   return (
@@ -66,7 +72,7 @@ export default function Dashboard() {
                 style={{ maxWidth: "250px" }}
                 className="p-2"
               >
-                <Folder folder={childFolder} />
+                <Folder folder={childFolder}  folderDeleteHandler={folderDeleteHandler} />
               </div>
             ))}
           </div>
