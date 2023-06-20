@@ -1,13 +1,14 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
-import Navbar from 'react-bootstrap/Navbar'
+import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import 'material-icons/iconfont/material-icons.css';
-import ReactTooltip from 'react-tooltip';
-import logo from './cloudlogo.png'
+import "material-icons/iconfont/material-icons.css";
+// import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
+
+import logo from "./cloudlogo.png";
 
 export default function NavbarComponent(props) {
-    
   return (
     <Navbar
       className="display-flex justify-content-between col px-md-5"
@@ -40,7 +41,7 @@ export default function NavbarComponent(props) {
         >
           logout
         </Nav.Link>
-        <ReactTooltip id="test" />
+        <Tooltip id="test" />
       </Nav>
     </Navbar>
   );
