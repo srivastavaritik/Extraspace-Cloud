@@ -70,6 +70,24 @@ const Login = () => {
               </Button>
             </div>
           </Form>
+          <Form
+                style={{
+                  display: "flex",
+                  position: "relative",
+                  left: "30%",
+                  width: "fit-content",
+                  bottom: "-10px",
+                  fontSize: "medium",
+                  color: "black",
+                }}
+              >
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                />
+                <br></br>
+                <label htmlFor="rememberMe">Remember me</label>
+              </Form>
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password" style={{ color: "black" }}>
               Forgot Password?
