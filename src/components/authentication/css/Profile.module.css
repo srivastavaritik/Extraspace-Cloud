@@ -19,6 +19,10 @@
     border: 0;
     font-size: 25px;
 }
+.nameInput::placeholder {
+  color: #4055a8; 
+}
+
 .icons{
     gap:25px;
 }
