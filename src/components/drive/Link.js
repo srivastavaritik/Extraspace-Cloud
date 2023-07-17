@@ -40,7 +40,7 @@ export default function Link({ link, linkDeleteHandler}) {
         className="btn btn-outline-dark"
         rel="noreferrer"
         style={{
-          backgroundColor: "rgba(0, 0, 0, 0.75)",
+          backgroundColor: "rgb(235 11 11 / 75%)",
           color: "white",
           margin: ".5rem",
         }}
