@@ -49,7 +49,7 @@ export default function File({ file, fileDeleteHandler }) {
               className="btn btn-outline-dark"
               rel="noreferrer"
               style={{
-                backgroundColor: "rgba(0, 0, 0, 0.75)",
+                backgroundColor: "#4CAF50",
                 color: "white",
                 margin: ".5rem",
               }}
@@ -64,7 +64,7 @@ export default function File({ file, fileDeleteHandler }) {
               className="btn btn-outline-dark"
               rel="noreferrer"
               style={{
-                backgroundColor: "rgba(0, 0, 0, 0.75)",
+                backgroundColor: "rgb(235 11 11 / 75%)",
                 color: "white",
                 margin: ".5rem",
               }}
