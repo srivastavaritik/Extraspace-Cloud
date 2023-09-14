@@ -29,7 +29,7 @@
 
 .git-btn {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.5;
     color: #212529;
     text-align: center;
@@ -38,14 +38,19 @@
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
-    background-color: transparent;
+    background-color: #c3cde8;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
-    border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    border: 2px solid black;
+    border-radius: 0.5rem;
+    box-shadow: 8px 10px 10px #768ac2;
+    border: none;
     margin: 10px;
     width: fit-content !important;
+}
+
+.git-btn:hover{
+    background-color: #426feb;
+    color: white;
 }
 
 .features {
