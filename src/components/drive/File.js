@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import { getFirestore, doc, deleteDoc } from "firebase/firestore";
 
 export default function File({ file, fileDeleteHandler }) {
   const db = getFirestore();
+  const [showDeleteModal, setShowDeleteModal] = useState(false); // State for managing the visibility of the delete confirmation modal
 
   const fid = file.id;
   const deleteHandler = () => {
@@ -18,6 +20,7 @@ export default function File({ file, fileDeleteHandler }) {
     fileDeleteHandler(fid);
     console.log({ file });
   };
+
   return (
     <>
       <div
@@ -32,17 +35,11 @@ export default function File({ file, fileDeleteHandler }) {
           padding: "0.5rem",
         }}
       >
-        <div
-          style={{
-            borderRadius: ".3rem",
-            backgroundColor: "#00000070",
-            padding: ".3rem",
-          }}
-        >
-          {file.name}
-        </div>
+        {/* File content */}
+
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div>
+            {/* Download button */}
             <a
               href={file.url}
               target="_blank"
@@ -54,11 +51,11 @@ export default function File({ file, fileDeleteHandler }) {
                 margin: ".5rem",
               }}
             >
-              {/* <FontAwesomeIcon icon={faFile}  /> */}
               Download
             </a>
           </div>
           <div>
+            {/* Delete button */}
             <button
               href="#"
               className="btn btn-outline-dark"
@@ -68,25 +65,45 @@ export default function File({ file, fileDeleteHandler }) {
                 color: "white",
                 margin: ".5rem",
               }}
-              onClick={deleteHandler}
+              onClick={() => setShowDeleteModal(true)} // Set the state to show the delete confirmation modal
             >
               Delete
             </button>
           </div>
         </div>
+
+        {/* Delete confirmation modal */}
+        <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Confirm Delete</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Are you sure you want to delete this file?</Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => setShowDeleteModal(false)}
+            >
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={deleteHandler}>
+              Delete
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </>
   );
 }
-{
-  /* <a
-  href={file.url}
-  target="_blank"
-  className="btn btn-outline-dark text-truncate w-100"
-  rel="noreferrer"
-  style={{ backgroundColor: "rgba(0, 0, 0, 0.75)", color: "white" }}
->
-  <FontAwesomeIcon icon={faFile} className="mr-2" />
-  {file.name}
-</a>; */
-}
+
+// {
+//   /* <a
+//   href={file.url}
+//   target="_blank"
+//   className="btn btn-outline-dark text-truncate w-100"
+//   rel="noreferrer"
+//   style={{ backgroundColor: "rgba(0, 0, 0, 0.75)", color: "white" }}
+// >
+//   <FontAwesomeIcon icon={faFile} className="mr-2" />
+//   {file.name}
+// </a>; */
+// }
