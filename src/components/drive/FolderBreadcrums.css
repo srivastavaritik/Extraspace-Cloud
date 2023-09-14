@@ -1,11 +1,12 @@
-body{
-        font-family: 'Space Mono', monospace;
+body {
+    font-family: 'Space Mono', monospace;
 }
-.bgcrum a{
-            font-family: 'Space Mono', monospace;
-font-weight: bold;
-padding: .2rem;
-    
+
+.bgcrum a {
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    padding: .2rem;
+
     text-decoration: none;
     color: rgb(163, 214, 255);
 }

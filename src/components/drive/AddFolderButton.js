@@ -43,7 +43,7 @@ export default function AddFolderButton({currentFolder}) {
   };
   return (
     <>
-      <div  className='btn btn-outline-success btn-sm mx-2' onClick={openModal}>
+      <div  className='btn btn-outline-success btn-sm mx-2'style={{fontSize: "2rem", width: "4rem"}} onClick={openModal} >
         <FontAwesomeIcon icon={faFolderPlus}/>
     </div>
       <Modal show={open} onHide={closeModal}>
